@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<title>CoD4 Tools</title>
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/tabs.js" defer></script>
+	<script src="js/checkcfg.js" defer></script>
+	<script src="js/killfeed.js" defer></script>
+	<script src="js/rcon.js" defer></script>
+	<script src="js/dvars.js" defer></script>
+	<script src="js/scoreboard.js" defer></script>
+	<script src="js/faq.js" defer></script>
+	<script src="js/toast.js" defer></script>
+</head>
+
+<body>
+	<main class="wrap">
+		<header class="header">
+			<svg class="brand" viewBox="0 0 1254 1254" width="34" height="34" aria-hidden="true" focusable="false">
+				<path fill="currentColor" fill-rule="evenodd"
+					d="M626.5 171.2 L728.1 484 L1057 484 L790.9 677.3 L626.5 796.8 L360.4 990.1 L462.1 677.3 L196 484 L524.9 484 Z
+					   M626.5 380 L681.3 548.5 L858.5 548.5 L715.1 652.7 L626.5 717.1 L537.9 652.7 L394.5 548.5 L571.7 548.5 Z" />
+				<path fill="currentColor" fill-rule="evenodd"
+					d="M858 575 L958 575 L958 830 L1020 830 L1020 895 L958 895 L958 1000 L858 1000 L858 895 L610 895 L610 830 Z
+					   M858 650 L858 830 L690 830 Z" />
+			</svg>
+			<h1>CoD4 Tools</h1>
+		</header>
+
+		<div class="tabs" role="tablist" aria-label="Инструменты">
+			<button class="tab is-active" type="button" role="tab" id="tab-checker" aria-controls="panel-checker"
+				aria-selected="true">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d="M3 2.5h10a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 13 13.5H3A1.5 1.5 0 0 1 1.5 12V4A1.5 1.5 0 0 1 3 2.5Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+					<path d="M4.8 6.2l1.6 1.6 3-3.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M4.8 10h6.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+				</svg>
+				<span>Проверка конфига</span>
+			</button>
+
+			<button class="tab" type="button" role="tab" id="tab-rcon" aria-controls="panel-rcon"
+				aria-selected="false" tabindex="-1">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d="M2.5 4.5h11v7h-11z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+					<path d="M4.5 7l1.8 1.6L4.5 10.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M8.2 10.2h3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+				</svg>
+				<span>Rcon-команды</span>
+			</button>
+
+			<button class="tab" type="button" role="tab" id="tab-dvars" aria-controls="panel-dvars"
+				aria-selected="false" tabindex="-1">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d="M3 3.5h4v4H3zM9 3.5h4v4H9zM3 8.5h4v4H3zM9 8.5h4v4H9z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+				</svg>
+				<span>Двары</span>
+			</button>
+
+			<button class="tab" type="button" role="tab" id="tab-killfeed" aria-controls="panel-killfeed"
+				aria-selected="false" tabindex="-1">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+					<path d="M8 1v3M8 12v3M1 8h3M12 8h3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+					<circle cx="8" cy="8" r="1.6" fill="currentColor"/>
+				</svg>
+				<span>Цвета килфида</span>
+			</button>
+
+			<button class="tab" type="button" role="tab" id="tab-sb" aria-controls="panel-sb"
+				aria-selected="false" tabindex="-1">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d="M2.5 4h11v2.4h-11zM2.5 7.2h11v2.4h-11zM2.5 10.4h11v2.4h-11z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+				</svg>
+				<span>Генератор табло</span>
+			</button>
+
+			<button class="tab" type="button" role="tab" id="tab-faq" aria-controls="panel-faq"
+				aria-selected="false" tabindex="-1">
+				<svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+					<path d="M6.3 6.4c.1-1 .9-1.7 1.9-1.7 1 0 1.8.7 1.8 1.6 0 1.3-1.5 1.4-1.9 2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+					<circle cx="8" cy="11.3" r=".9" fill="currentColor"/>
+				</svg>
+				<span>Справка</span>
+			</button>
+		</div>
+
+		<section class="panel" id="panel-checker" role="tabpanel" aria-labelledby="tab-checker" tabindex="0">
+			<p class="lede">Вставьте или загрузите конфиг, чтобы проверить его на запрещённые DVAR'ы и бинды.
+				Ничего не загружается на сервер &mdash; проверка выполняется прямо в браузере.</p>
+
+			<form class="card" action="#">
+				<label class="visually-hidden" for="cfg">Конфиг</label>
+				<div class="editor">
+					<div class="gutter-box" aria-hidden="true">
+						<div class="gutter" id="gutter">1</div>
+					</div>
+					<div class="input-wrap">
+						<div class="highlights" aria-hidden="true">
+							<div class="highlights-inner" id="highlights"></div>
+						</div>
+						<textarea id="cfg" name="cfg" rows="16" wrap="off" spellcheck="false" autocomplete="off"
+							placeholder="bind MOUSE1 &quot;+attack&quot;&#10;seta cg_fov 80&#10;..."></textarea>
+					</div>
+				</div>
+
+				<div class="actions">
+					<div class="tools">
+						<input class="visually-hidden" type="file" id="file" accept=".cfg">
+						<button class="btn" type="button" id="upload">Загрузить .cfg</button>
+						<button class="btn" type="button" id="copy" hidden>Копировать</button>
+						<button class="btn" type="button" id="download" hidden>Скачать</button>
+					</div>
+					<button class="btn btn-primary" type="submit">Проверить</button>
+				</div>
+			</form>
+
+			<p class="hint" id="hint" role="status"></p>
+
+			<ul id="violations" hidden></ul>
+		</section>
+
+		<section class="panel" id="panel-rcon" role="tabpanel" aria-labelledby="tab-rcon" tabindex="0" hidden>
+			<p class="lede">Справочник по Promod rcon. Скопируйте команду и вставьте её в игровую консоль.
+				Заполнители в квадратных скобках нужно заменить своими значениями.</p>
+
+			<p class="hint" id="rc-hint" role="status"></p>
+
+			<div id="rc-list"></div>
+		</section>
+
+		<section class="panel" id="panel-dvars" role="tabpanel" aria-labelledby="tab-dvars" tabindex="0" hidden>
+			<p class="lede">Все двары CoD4 с игровым описанием, отсортированы по имени.
+				Фильтр по имени или описанию.</p>
+
+			<div class="dv-bar">
+				<label class="visually-hidden" for="dv-search">Фильтр дваров</label>
+				<input class="dv-search" type="search" id="dv-search" placeholder="Фильтр дваров&hellip;"
+					spellcheck="false" autocomplete="off">
+				<span class="dv-count" id="dv-count" aria-live="polite"></span>
+			</div>
+
+			<p class="dv-empty" id="dv-empty" hidden></p>
+
+			<div class="dv-list" id="dv-list"></div>
+		</section>
+
+		<section class="panel" id="panel-killfeed" role="tabpanel" aria-labelledby="tab-killfeed" tabindex="0" hidden>
+			<p class="lede">Выберите цвет для каждого DVAR'а или вставьте значения из конфига, чтобы увидеть,
+				какому цвету они соответствуют. CoD4 записывает красный, зелёный, синий и альфу числами от 0 до 1.</p>
+
+			<div class="card">
+				<div class="kf-bind">
+					<span class="kf-bind-label">бинд</span>
+					<input class="kf-key" type="text" id="kf-key" value="W" placeholder="W" spellcheck="false"
+						autocomplete="off" aria-label="Клавиша бинда">
+					<input class="kf-action" type="text" id="kf-action" value="+forward" placeholder="+forward"
+						spellcheck="false" autocomplete="off" aria-label="Действие бинда">
+				</div>
+
+				<div class="kf-rows" id="kf-rows"></div>
+
+				<div class="actions">
+					<div class="tools">
+						<button class="btn" type="button" id="kf-reset">Сбросить</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">Предпросмотр килфида</span>
+				</div>
+				<div class="kf-feed" id="kf-feed"></div>
+			</div>
+
+			<p class="hint" id="kf-hint" role="status"></p>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">Строка бинда</span>
+					<button class="btn btn-sm" type="button" id="kf-copy-bind">Копировать</button>
+				</div>
+				<pre class="kf-output" id="kf-output-bind"></pre>
+			</div>
+		</section>
+
+		<section class="panel" id="panel-sb" role="tabpanel" aria-labelledby="tab-sb" tabindex="0" hidden>
+			<p class="lede">Настройте табло, наблюдайте за изменениями и копируйте строки конфига.
+				Предпросмотр следует правилам вёрстки из исходников игры.</p>
+
+			<details class="sb-presets">
+				<summary class="sb-presets-head">Цветовые пресеты</summary>
+				<div class="sb-preset-list" id="sb-presets"></div>
+			</details>
+
+			<div class="sb-grid" id="sb-controls"></div>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">Предпросмотр</span>
+					<button class="btn btn-sm" type="button" id="sb-reset">Сбросить</button>
+				</div>
+				<div class="sb-preview" id="sb-preview">
+					<div class="sb-screen" id="sb-screen"></div>
+				</div>
+			</div>
+
+			<p class="hint" id="sb-hint" role="status"></p>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">bind TAB</span>
+					<button class="btn btn-sm" type="button" id="sb-copy-bind">Копировать</button>
+				</div>
+				<pre class="kf-output" id="sb-out-bind"></pre>
+			</div>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">табло и пинг</span>
+					<button class="btn btn-sm" type="button" id="sb-copy-board">Копировать</button>
+				</div>
+				<pre class="kf-output" id="sb-out-board"></pre>
+			</div>
+
+			<div class="kf-out">
+				<div class="kf-out-head">
+					<span class="kf-out-title">команды и цвета</span>
+					<button class="btn btn-sm" type="button" id="sb-copy-teams">Копировать</button>
+				</div>
+				<pre class="kf-output" id="sb-out-teams"></pre>
+			</div>
+		</section>
+
+		<section class="panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq" tabindex="0" hidden>
+			<p class="lede">Ответы на вопросы, которые постоянно возникают вокруг config_mp.cfg.
+				Каждый двар ниже был проверен непосредственно в игре.</p>
+
+			<div class="dv-bar">
+				<label class="visually-hidden" for="fq-search">Поиск по Справке</label>
+				<input class="dv-search" type="search" id="fq-search" placeholder="Поиск по Справке&hellip;"
+					spellcheck="false" autocomplete="off">
+				<span class="dv-count" id="fq-count" aria-live="polite"></span>
+			</div>
+
+			<p class="hint" id="fq-hint" role="status"></p>
+
+			<p class="dv-empty" id="fq-empty" hidden></p>
+
+			<div id="fq-list"></div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<a class="footer-gh" href="https://github.com/K-Faktor" rel="noopener"
+			title="Этот проект на GitHub">
+			<svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false">
+				<path
+					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+			</svg>
+			<span class="footer-gh-name">K-Faktor</span>
+		</a>
+	</footer>
+
+	<!-- Контейнер тостов. Наполняется js/toast.js -->
+	<div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+</body>
+
+</html>
