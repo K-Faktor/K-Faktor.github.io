@@ -91,7 +91,7 @@
 			allies: "0 0.55 1 1", alliesTitle: "0 0.55 1 1",
 			axis: "0 0 0 1", axisTitle: "0 0 0 1",
 			mine: "0.255 0.255 0.255 1" },
-		{ name: "LA Lakers",
+		{ name: "Фиолетовый и жёлтый",
 			allies: "0.438 0.113 1 1", alliesTitle: "0.89 1 0.184 1",
 			axis: "0.438 0.113 1 1", axisTitle: "0.89 1 0.184 1",
 			mine: "0.89 1 0.184 1" },
