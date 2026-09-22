@@ -46,7 +46,7 @@
 				{ text: "Установите Call of Duty 4 с дисков." },
 				{ text: "Поставьте патч 1.6." },
 				{ text: "Поверх него поставьте патч 1.7." },
-				{ text: "Установите клиент CoD4X 21.3.", link: "https://cod4x.ovh/t/cod4x-client-and-server-files/24",
+				{ text: "Установите клиент CoD4X 21.5.", link: "https://cod4x.ovh/t/cod4x-client-and-server-files/24",
 					linkText: "cod4x.ovh" }
 			]
 		},
@@ -57,7 +57,7 @@
 				"патчи уже стоят к моменту окончания установки.",
 			steps: [
 				{ text: "Купите и установите Call of Duty 4: Modern Warfare через Steam." },
-				{ text: "Установите клиент CoD4X 21.3.", link: "https://cod4x.ovh/t/cod4x-client-and-server-files/24",
+				{ text: "Установите клиент CoD4X 21.5.", link: "https://cod4x.ovh/t/cod4x-client-and-server-files/24",
 					linkText: "cod4x.ovh" }
 			]
 		},
